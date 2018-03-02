@@ -21,8 +21,8 @@ public class PigLocalGame extends LocalGame {
     /**
      * This ctor creates a new game state
      */
-    public PigLocalGame(PigGameState pig) {
-        this.pig = pig;
+    public PigLocalGame() {
+        this.pig = new PigGameState();
 
     }
 
