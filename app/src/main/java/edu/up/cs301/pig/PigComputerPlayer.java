@@ -1,5 +1,7 @@
 package edu.up.cs301.pig;
 
+import java.util.Random;
+
 import edu.up.cs301.game.GameComputerPlayer;
 import edu.up.cs301.game.actionMsg.GameAction;
 import edu.up.cs301.game.infoMsg.GameInfo;
@@ -28,7 +30,29 @@ public class PigComputerPlayer extends GameComputerPlayer {
      */
     @Override
     protected void receiveInfo(GameInfo info) {
-        // TODO  You will implement this method
+        if(info instanceof PigGameState) {
+            PigGameState gameState = (PigGameState) info;
+            PigLocalGame game = new PigLocalGame(gameState);
+            if(game.canMove(this.playerNum))
+            {
+                Random rand = new Random();
+                switch (rand.nextInt(1))
+                {
+                    case 0:
+                        PigHoldAction hold = new PigHoldAction(this);
+                        this.game.sendAction(hold);
+                        break;
+                    case 1:
+                        PigRollAction roll = new PigRollAction(this);
+                        this.game.sendAction(roll);
+                        break;
+                }
+
+            }
+        }
+        return;
+
+
     }//receiveInfo
 
 }
