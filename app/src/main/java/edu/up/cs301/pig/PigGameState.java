@@ -32,6 +32,8 @@ public class PigGameState extends GameState {
         this.currentDieValue = copy.currentDieValue;
 
     }
+
+
     //getters for all variables
     public int getCurrentPlayer(){return currentPlayer;}
     public int getPlayer0Score(){return player0Score;}
