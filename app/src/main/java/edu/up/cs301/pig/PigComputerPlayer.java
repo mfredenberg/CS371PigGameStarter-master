@@ -32,8 +32,7 @@ public class PigComputerPlayer extends GameComputerPlayer {
     protected void receiveInfo(GameInfo info) {
         if(info instanceof PigGameState) {
             PigGameState gameState = (PigGameState) info;
-            PigLocalGame game = new PigLocalGame(gameState);
-            if(game.canMove(this.playerNum))
+            if(gameState.getCurrentPlayer() == this.playerNum)
             {
                 Random rand = new Random();
                 switch (rand.nextInt(1))
