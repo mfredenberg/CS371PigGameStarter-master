@@ -11,5 +11,7 @@ public class PigGameState extends GameState {
     int currentPlayer;
     int player0Score;
     int player1Score;
+    int currentRunningScore;
+    int currentDieValue;
 
 }
