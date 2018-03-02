@@ -7,6 +7,8 @@ import edu.up.cs301.game.infoMsg.GameState;
 
 import android.util.Log;
 
+import java.util.Random;
+
 /**
  * class PigLocalGame controls the play of the game
  *
@@ -39,10 +41,38 @@ public class PigLocalGame extends LocalGame {
      */
     @Override
     protected boolean makeMove(GameAction action) {
-        if(action instanceof PigHoldAction)
-        {
-            PigHoldAction hold = ()
+        if (action instanceof PigHoldAction) {
+            int player = pig.getCurrentPlayer();
+            if (player == 0) {
+                pig.setPlayer0Score(pig.getCurrentRunningScore() + pig.getPlayer0Score());
+                pig.setCurrentRunningScore(0);
+                pig.setCurrentPlayer(1);
+            } else if (player == 1) {
+                pig.setPlayer0Score(pig.getCurrentRunningScore() + pig.getPlayer1Score());
+                pig.setCurrentRunningScore(0);
+                pig.setCurrentPlayer(0);
+            }
+            return true;
+        } else if (action instanceof PigHoldAction) {
+            Random rand = new Random();
+            pig.setCurrentDieValue(rand.nextInt(6) + 1);
+            if (pig.getCurrentDieValue() != 1) {
+                pig.setCurrentRunningScore(pig.getCurrentRunningScore() + pig.getCurrentDieValue());
+            } else if (pig.getCurrentDieValue() == 1) {
+                pig.setCurrentRunningScore(0);
+                switch (pig.getCurrentPlayer()) {
+                    case 0:
+                        pig.setCurrentPlayer(1);
+                        break;
+                    case 1:
+                        pig.setCurrentPlayer(0);
+                        break;
+
+                }
+            }
+            return true;
         }
+        return false;
     }//makeMove
 
     /**
@@ -56,9 +86,8 @@ public class PigLocalGame extends LocalGame {
     /**
      * Check if the game is over
      *
-     * @return
-     * 		a message that tells who has won the game, or null if the
-     * 		game is not over
+     * @return a message that tells who has won the game, or null if the
+     * game is not over
      */
     @Override
     protected String checkIfGameOver() {
