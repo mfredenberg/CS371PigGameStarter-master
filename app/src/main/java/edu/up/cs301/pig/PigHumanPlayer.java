@@ -59,7 +59,7 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
     @Override
     public void receiveInfo(GameInfo info) {
         PigGameState gameState = (PigGameState) info;
-        if (info instanceof PigGameState && gameState.getCurrentPlayer() == this.playerNum) {
+        if (info instanceof PigGameState) {
             switch (gameState.getCurrentPlayer()) {
                 case 0:
                     this.playerScoreTextView.setText("" + gameState.getPlayer0Score());
@@ -79,7 +79,6 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
                 case 2:
                     dieImageButton.setImageResource(R.drawable.face2);
                     break;
-
                 case 3:
                     dieImageButton.setImageResource(R.drawable.face3);
                     break;
@@ -94,9 +93,11 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
                     break;
 
             }
-            return;
+
         }
-        this.flash(Color.BLUE, 10);
+        if(gameState.getCurrentPlayer() != this.playerNum) {
+            this.flash(Color.BLUE, 10);
+        }
 
     }//receiveInfo
 
@@ -107,11 +108,11 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
      * @param button the button that was clicked
      */
     public void onClick(View button) {
-        if (button.getId() == R.id.holdButton) {
+        if(button.getId() == R.id.holdButton) {
             PigHoldAction hold = new PigHoldAction(this);
             this.game.sendAction(hold);
 
-        } else if (button.getId() == R.id.dieButton) {
+        } else if(button.getId() == R.id.dieButton) {
             PigRollAction roll = new PigRollAction(this);
             this.game.sendAction(roll);
         }

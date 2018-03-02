@@ -47,8 +47,9 @@ public class PigLocalGame extends LocalGame {
                 pig.setPlayer0Score(pig.getCurrentRunningScore() + pig.getPlayer0Score());
                 pig.setCurrentRunningScore(0);
                 pig.setCurrentPlayer(1);
+
             } else if (player == 1) {
-                pig.setPlayer0Score(pig.getCurrentRunningScore() + pig.getPlayer1Score());
+                pig.setPlayer1Score(pig.getCurrentRunningScore() + pig.getPlayer1Score());
                 pig.setCurrentRunningScore(0);
                 pig.setCurrentPlayer(0);
             }
