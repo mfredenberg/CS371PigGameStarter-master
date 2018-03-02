@@ -53,7 +53,7 @@ public class PigLocalGame extends LocalGame {
                 pig.setCurrentPlayer(0);
             }
             return true;
-        } else if (action instanceof PigHoldAction) {
+        } else if (action instanceof PigRollAction) {
             Random rand = new Random();
             pig.setCurrentDieValue(rand.nextInt(6) + 1);
             if (pig.getCurrentDieValue() != 1) {
@@ -82,7 +82,7 @@ public class PigLocalGame extends LocalGame {
     protected void sendUpdatedStateTo(GamePlayer p) {
         PigGameState playerPigGameState = new PigGameState(pig);
         p.sendInfo(playerPigGameState);
-        //TODO  You will implement this method
+
     }//sendUpdatedSate
 
     /**
@@ -99,7 +99,7 @@ public class PigLocalGame extends LocalGame {
         else if(pig.getPlayer1Score() >= 50){
             return "Player 1 Wins";
         }
-        //TODO  You will implement this method
+
         return null;
     }
 
