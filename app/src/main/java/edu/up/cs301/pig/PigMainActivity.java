@@ -8,6 +8,8 @@ import edu.up.cs301.game.LocalGame;
 import edu.up.cs301.game.config.GameConfig;
 import edu.up.cs301.game.config.GamePlayerType;
 
+import static android.R.attr.name;
+
 /**
  * this is the primary activity for Pig
  *
@@ -42,6 +44,9 @@ public class PigMainActivity extends GameMainActivity {
             public GamePlayer createPlayer(String name) {
                 return new PigComputerPlayer(name);
             }});
+        playerTypes.add(new GamePlayerType("Smarty Pants computer") {
+        public GamePlayer createPlayer(String name){ return new SmartCompterScience(name);}});
+
 
         // Create a game configuration class for Pig:
         GameConfig defaultConfig = new GameConfig(playerTypes, 1, 2, "Pig", PORT_NUMBER);

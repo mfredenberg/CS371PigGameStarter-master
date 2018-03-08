@@ -7,6 +7,7 @@ import edu.up.cs301.game.infoMsg.GameInfo;
 
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -60,18 +61,20 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
     public void receiveInfo(GameInfo info) {
         PigGameState gameState = (PigGameState) info;
         if (info instanceof PigGameState) {
-            switch (gameState.getCurrentPlayer()) {
-                case 0:
+            if(gameState.getCurrentPlayer() != this.playerNum) {
+                this.flash(Color.BLUE, 10);
+                return;
+            }
+
+
                     this.playerScoreTextView.setText("" + gameState.getPlayer0Score());
                     this.oppScoreTextView.setText("" + gameState.getPlayer1Score());
                     this.turnTotalTextView.setText("" + gameState.getCurrentRunningScore());
-                    break;
-                case 1:
-                    this.playerScoreTextView.setText("" + gameState.getPlayer1Score());
-                    this.oppScoreTextView.setText("" + gameState.getPlayer0Score());
-                    this.turnTotalTextView.setText("" + gameState.getCurrentRunningScore());
-                    break;
-            }
+
+
+
+
+
             switch (gameState.getCurrentDieValue()) {
                 case 1:
                     dieImageButton.setImageResource(R.drawable.face1);
@@ -95,9 +98,7 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
             }
 
         }
-        if(gameState.getCurrentPlayer() != this.playerNum) {
-            this.flash(Color.BLUE, 10);
-        }
+
 
     }//receiveInfo
 

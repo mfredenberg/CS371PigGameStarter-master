@@ -74,7 +74,7 @@ public class PigLocalGame extends LocalGame {
             return true;
         }
         return false;
-    }//makeMove
+    }
 
     /**
      * send the updated state to a given player
@@ -94,10 +94,9 @@ public class PigLocalGame extends LocalGame {
      */
     @Override
     protected String checkIfGameOver() {
-        if(pig.getPlayer0Score() >= 50){
+        if (pig.getPlayer0Score() >= 50) {
             return "Player 0 Wins with a score of " + pig.getPlayer0Score();
-        }
-        else if(pig.getPlayer1Score() >= 50){
+        } else if (pig.getPlayer1Score() >= 50) {
             return "Player 1 Wins with a score of " + pig.getPlayer1Score();
         }
 

@@ -3,30 +3,30 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\papoutsa20\StudioProjects\CS371PigGameStarter-master\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\steli\Google Drive\College_Soph_S2\CS 301\CS371PigGameStarter-master\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\papoutsa20\StudioProjects\CS371PigGameStarter-master\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_1a42c6c0c9261da60930b7264b7dcadc036b0b10\classes.dex" />
+        sha1="637b4fafe024cafac7c7ec869032d6bf44723fab">
+        <dex dex="C:\Users\steli\Google Drive\College_Soph_S2\CS 301\CS371PigGameStarter-master\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_69f995510618a25fc2f67659f8d6f1d008ca21a8\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\AndroidSDK\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jar="C:\Users\steli\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
-        <dex dex="C:\Users\papoutsa20\StudioProjects\CS371PigGameStarter-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-v4-18.0.0_bf6372499ab7d9c7586f81e3c8610d4c63b58b3f\classes.dex" />
+        <dex dex="C:\Users\steli\Google Drive\College_Soph_S2\CS 301\CS371PigGameStarter-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-v4-18.0.0_66cef17164d4a8f329cf9dd2fafa00193cd52cfa\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\papoutsa20\StudioProjects\CS371PigGameStarter-master\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\steli\Google Drive\College_Soph_S2\CS 301\CS371PigGameStarter-master\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="7527ea2711151549ebdd38b103506bb982db07ea">
-        <dex dex="C:\Users\papoutsa20\StudioProjects\CS371PigGameStarter-master\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_336ccea797ee24da5c6b02cbafb69958f35a9f3f\classes.dex" />
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\steli\Google Drive\College_Soph_S2\CS 301\CS371PigGameStarter-master\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_396a86b6ec12d7aa81422c9a8a59d9893261a145\classes.dex" />
     </item>
 
 </items>
